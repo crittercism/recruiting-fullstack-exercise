@@ -22,5 +22,6 @@ To Run
 
 To Run Health Check
 -------------------
-	curl http://localhost:8080/api-server/healthcheck
+This is for credentials admin:admin
 
+	curl --header "authorization: Basic YWRtaW46YWRtaW4=" http://localhost:8080/api-server/healthcheck

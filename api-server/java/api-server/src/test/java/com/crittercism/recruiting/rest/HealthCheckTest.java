@@ -9,9 +9,12 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Base64;
+
 import static org.junit.Assert.assertEquals;
 
-public class MyResourceTest {
+public class HealthCheckTest {
 
     private HttpServer server;
     private WebTarget target;
@@ -42,9 +45,13 @@ public class MyResourceTest {
      */
     @Test
     public void testGetIt() {
-        String responseMsg = target.path("healthcheck").request().get(String.class);
+        String encodedCredentials = new String(Base64.getEncoder().encode("admin:admin".getBytes()));
+        String responseMsg = target
+                .path("healthcheck")
+                .request()
+                .header("authorization", "Basic YWRtaW46YWRtaW4=")
+                .get(String.class);
         System.out.println(responseMsg);
         assertEquals("{\"status\":\"0:OK 0:1\"}", responseMsg);
-        //{"status":"0:OK 0:1"}
     }
 }

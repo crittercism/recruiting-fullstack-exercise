@@ -3,12 +3,11 @@ package com.crittercism.recruiting.rest.security;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 import java.util.Base64;
 
-/**
- * Created by kdunsmore on 9/27/15.
- */
+@Provider
 public class AuthenticationFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
@@ -32,7 +31,7 @@ public class AuthenticationFilter implements ContainerRequestFilter {
         auth = auth.replaceFirst("[Bb]asic ", "");
         String userColonPass = new String(Base64.getDecoder().decode(auth.getBytes()));
 
-        if (!userColonPass.equals("admin:arse")) {
+        if (!userColonPass.equals("admin:admin")) {
             requestContext.abortWith(Response
                     .status(Response.Status.UNAUTHORIZED)
                     .entity("User cannot access the resource.")
