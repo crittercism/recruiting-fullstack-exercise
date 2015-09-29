@@ -1,5 +1,7 @@
 package com.crittercism.recruiting.rest.security;
 
+import javax.annotation.Priority;
+import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.Response;
@@ -8,16 +10,11 @@ import java.io.IOException;
 import java.util.Base64;
 
 @Provider
+@Authenticated
+@Priority(Priorities.AUTHENTICATION)
 public class AuthenticationFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
-        // Automatically allow certain requests.
-        String method = requestContext.getMethod();
-//        String path = requestContext.getPath();
-//        if (method.equals("GET") && path.equals("application.wadl")) {
-//            return;
-//        }
-
         // Get the authentication passed in HTTP headers parameters
         String auth = requestContext.getHeaderString("authorization");
         if (auth == null) {
