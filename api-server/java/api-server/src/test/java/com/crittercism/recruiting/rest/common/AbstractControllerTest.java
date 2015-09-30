@@ -1,21 +1,15 @@
-package com.crittercism.recruiting.rest;
+package com.crittercism.recruiting.rest.common;
+
+import com.crittercism.recruiting.rest.Main;
+import org.glassfish.grizzly.http.server.HttpServer;
+import org.junit.After;
+import org.junit.Before;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
-import org.glassfish.grizzly.http.server.HttpServer;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.util.Base64;
-
-import static org.junit.Assert.assertEquals;
-
-public class HealthCheckTest {
-
+public abstract class AbstractControllerTest {
     private HttpServer server;
     private WebTarget target;
 
@@ -40,18 +34,7 @@ public class HealthCheckTest {
         server.shutdownNow();
     }
 
-    /**
-     * Test to see that the message "Got it!" is sent in the response.
-     */
-    @Test
-    public void testGetIt() {
-        String encodedCredentials = new String(Base64.getEncoder().encode("admin:admin".getBytes()));
-        String responseMsg = target
-                .path("healthcheck")
-                .request()
-                .header("authorization", "Basic YWRtaW46YWRtaW4=")
-                .get(String.class);
-        System.out.println(responseMsg);
-        assertEquals("{\"status\":\"0:OK 0:1\"}", responseMsg);
+    protected WebTarget getTarget() {
+        return target;
     }
 }
