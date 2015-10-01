@@ -1,8 +1,8 @@
 {
   "id":2,
-  "app_id":2,
+  "appId":2,
   "reason":"Sig fault",
-  "stack_trace":[
+  "stackTrace":[
     "Line 1",
     "Line 2",
     "Line 3"

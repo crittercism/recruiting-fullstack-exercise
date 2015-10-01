@@ -1,8 +1,8 @@
 {
   "id":2,
-  "app_id":4,
+  "appId":4,
   "reason":"network not responding",
-  "stack_trace":[
+  "stackTrace":[
     "Line 1",
     "Line 2",
     "Line 3",

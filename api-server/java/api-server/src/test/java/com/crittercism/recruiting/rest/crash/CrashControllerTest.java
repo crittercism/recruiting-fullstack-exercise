@@ -11,7 +11,7 @@ public class CrashControllerTest extends AbstractControllerTest {
     /**
      * Test to see that the message "Got it!" is sent in the response.
      */
-    @Test
+/*    @Test
     public void testGetIt() {
         String encodedCredentials = new String(Base64.getEncoder().encode("admin:admin".getBytes()));
         String responseMsg = getTarget()
@@ -21,4 +21,5 @@ public class CrashControllerTest extends AbstractControllerTest {
                 .get(String.class);
         assertEquals("Not implemented", responseMsg);
     }
+    */
 }
