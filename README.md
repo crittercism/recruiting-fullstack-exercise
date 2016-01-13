@@ -3,7 +3,9 @@ REST API Exercise
 
 General
 -------
-Examine the data in the /api-server/data directory. You will see 4 different entities, all of which are related (accounts, apps, crashes and users).
+Examine the data in the `/api-server/data` directory. You will see 4 different entities, all of which are related (accounts, apps, crashes and users). These data files are simplified versions of the major entities found in the Crittercism system. The relationship between entities is shown below in a UML static class diagram.
+
+<< image here >>
 
 For this exercise, you will perform two major tasks:
 
