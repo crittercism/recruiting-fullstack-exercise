@@ -3,7 +3,7 @@ Full Stack REST API and UI Exercise
 
 General
 -------
-Examine the data in the `/api-server/data` directory. You will see 4 different entities, all of which are related (accounts, apps, crashes and users). These data files are simplified versions of the major entities found in the Crittercism system. The relationship between entities is shown below in a UML static class diagram.
+Examine the files in the [/api-server/data](/api-server/data) directory. You will see 4 different entities, all of which are related (accounts, apps, crashes and users). These data files are simplified versions of the major entities found in the Crittercism system. The relationship between entities is shown below in a UML static class diagram.
 
 ![Alt text](/static_class_diagram.png "Entity Relationship Static Class Diagram")
 
