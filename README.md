@@ -24,9 +24,16 @@ For this exercise, you will perform two major tasks:
     * Clicking on an app must display all of the names of the crashes that belong to that selected app.
       * Clickkng on a crash name must display the all of the information for the selected crash.
 
+Submitting
+----------
+
 To submit your work, you must provide a single zip file that contains:
   * Full source code for the api server and ui server components.
   * A script called `start-api-server.sh` that starts the api server component.
   * A script called `start-ui-server.sh` that starts te UI server component.
   * If you choose a compiled language, you must provide a script, called `build.sh` that performs the necessary compilation steps.
 
+Other Info
+----------
+
+You may use template applications, bootstrap projects and the internet in general to complete your submission. If you have a question about whether or not you can use something, don't ask - use it!
