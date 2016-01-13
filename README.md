@@ -1,5 +1,5 @@
-REST API Exercise
------------------
+Full Stack REST API and UI Exercise
+-----------------------------------
 
 General
 -------
